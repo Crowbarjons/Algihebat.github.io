@@ -40,7 +40,6 @@
         }
     </script>
 
-    <!-- Custom CSS Styles -->
     <style>
         body {
             background-color: #0b131e;
@@ -86,7 +85,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Background Animated Spheres */
+        /* Background Animated Ambient Glows */
         .bg-glow-1 {
             position: absolute;
             top: 5%;
@@ -114,18 +113,14 @@
 </head>
 <body class="relative min-h-screen flex flex-col justify-between">
 
-    <!-- Background Ambient Glows -->
+    <!-- Ambient Background Lighting -->
     <div class="bg-glow-1"></div>
     <div class="bg-glow-2"></div>
 
-    <!-- Hidden global file input for instant interactive image replacement -->
-    <input type="file" id="globalImageUploader" accept="image/*" class="hidden" onchange="applyUploadedImage(event)">
-
-    <!-- Navbar Header -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-amber-500/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo / Name -->
+                <!-- Logo & Branding -->
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-emerald-500 flex items-center justify-center font-bold text-darkBg shadow-lg group-hover:scale-105 transition-transform">
                         AF
@@ -152,14 +147,14 @@
                     </a>
                 </nav>
 
-                <!-- Mobile Navigation Toggle Button -->
+                <!-- Mobile Toggle Button -->
                 <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-amber-400 hover:text-white border border-amber-500/20 focus:outline-none">
                     <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Nav Dropdown -->
+        <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-amber-500/20 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3">
             <a href="#about" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-amber-500/10 hover:text-amber-400">
                 <i class="fa-solid fa-user text-amber-500 mr-2"></i> Tentang Saya
@@ -177,12 +172,11 @@
     </header>
 
     <main class="flex-grow">
-        <!-- Hero Section -->
         <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
-                    <!-- Left Hero Content -->
+                    <!-- Left Hero Text -->
                     <div class="lg:col-span-7 text-center lg:text-left space-y-6">
                         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold tracking-wide">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -198,7 +192,6 @@
                             Fokus pada perakitan sistem audio Hi-Fi, sistem otomatisasi robotika, serta inovasi daya terbarukan dengan standar kualitas tinggi dan keakuratan teknik.
                         </p>
 
-                        <!-- Call To Action Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                             <a href="#projects" class="px-8 py-3.5 text-base font-bold rounded-xl text-darkBg bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:shadow-gold-glow hover:scale-105 transition-all duration-300 text-center flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-folder-open"></i> Lihat Proyek Saya
@@ -208,10 +201,10 @@
                             </a>
                         </div>
 
-                        <!-- Quick Badges -->
+                        <!-- Stats Highlights -->
                         <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
                             <div>
-                                <h4 class="text-xl sm:text-2xl font-bold text-amber-400">3+</h4>
+                                <h4 class="text-xl sm:text-2xl font-bold text-amber-400">3</h4>
                                 <p class="text-xs text-slate-400">Proyek Utama</p>
                             </div>
                             <div>
@@ -220,40 +213,29 @@
                             </div>
                             <div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-amber-400">100%</h4>
-                                <p class="text-xs text-slate-400">Dedikasi Teknik</p>
+                                <p class="text-xs text-slate-400">Dedikasi TAV</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right Hero Avatar Card with <img> tag -->
+                    <!-- Right Hero Profile Image Card -->
                     <div class="lg:col-span-5 flex justify-center">
                         <div class="relative w-full max-w-md">
                             <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
                             
                             <div class="relative glass-card rounded-3xl p-6 text-center border border-amber-500/30">
-                                <!-- Profile Image Container -->
-                                <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-2xl bg-slate-800 group">
+                                <!-- Clean Tag HTML <img> Profil (Ganti src="images/profil.jpg" jika punya file lokal) -->
+                                <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-2xl bg-slate-800">
                                     <img id="img-profile" 
                                          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
                                          alt="Muhammad Algi Fahri - Profil" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/0b131e/fbbf24?text=Foto+Profil+Algi';">
-                                    
-                                    <!-- Interactive Upload Hover Overlay -->
-                                    <div class="absolute inset-0 bg-darkBg/75 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300 p-2 cursor-pointer"
-                                         onclick="triggerImageUpload('img-profile')">
-                                        <i class="fa-solid fa-camera text-2xl text-amber-400 mb-1"></i>
-                                        <span class="text-[11px] font-bold text-white">Ganti Foto Profil</span>
-                                        <span class="text-[9px] text-slate-300">Klik untuk upload foto</span>
-                                    </div>
+                                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer"
+                                         onclick="openModal('Muhammad Algi Fahri', 'Siswa Teknik Audio Video | SMKN 4 Bandung', 'Profil profesional Muhammad Algi Fahri dari jurusan Teknik Audio Video SMK Negeri 4 Bandung.', 'img-profile')"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/0b131e/fbbf24?text=Muhammad+Algi+Fahri';">
                                 </div>
 
                                 <h3 class="text-xl font-bold text-white mb-1">M. Algi Fahri</h3>
                                 <p class="text-xs text-amber-400 font-medium mb-4">Siswa SMK Negeri 4 Bandung</p>
-                                
-                                <button onclick="triggerImageUpload('img-profile')" class="text-xs px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500/30 transition-colors mb-4">
-                                    <i class="fa-solid fa-upload mr-1"></i> Upload Foto Profil Anda
-                                </button>
 
                                 <div class="flex justify-center gap-2 flex-wrap">
                                     <span class="px-3 py-1 rounded-md text-xs bg-slate-800 text-slate-300 border border-slate-700">Audio Hi-Fi</span>
@@ -268,7 +250,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-20 bg-slate-900/40 border-y border-slate-800/60 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -280,20 +261,18 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     
-                    <!-- Bio Description Card -->
                     <div class="glass-card p-8 rounded-2xl">
                         <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                             <i class="fa-solid fa-graduation-cap text-amber-400"></i> Siswa SMK Negeri 4 Bandung
                         </h3>
                         <p class="text-slate-300 leading-relaxed mb-6">
-                            Saya adalah siswa yang berdedikasi tinggi dari jurusan <strong class="text-amber-400 font-semibold">Teknik Audio Video (TAV)</strong> di SMKN 4 Bandung. Memiliki ketertarikan mendalam pada perancangan sirkuit analog maupun digital, pengolahan sinyal audio frekuensi tinggi, serta implementasi energi terbarukan untuk mendukung teknologi masa depan yang ramah lingkungan.
+                            Saya adalah siswa dari jurusan <strong class="text-amber-400 font-semibold">Teknik Audio Video (TAV)</strong> di SMKN 4 Bandung. Memiliki minat mendalam pada perancangan sirkuit analog maupun digital, pengolahan sinyal audio frekuensi tinggi, serta implementasi energi terbarukan untuk mendukung teknologi masa depan.
                         </p>
                         <p class="text-slate-300 leading-relaxed">
-                            Selalu bersemangat mempelajari hal baru, terbiasa dengan pemecahan masalah teknis secara metodis, dan siap memberikan hasil kerja berkualitas tinggi secara individu maupun tim.
+                            Terbiasa dengan pemecahan masalah teknis secara metodis, perakitan perangkat keras, dan siap memberikan hasil kerja berkualitas tinggi baik secara individu maupun tim.
                         </p>
                     </div>
 
-                    <!-- Skills Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="glass-card p-5 rounded-xl border border-amber-500/20">
                             <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
@@ -332,53 +311,41 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2"><i class="fa-solid fa-diagram-project mr-1"></i> Karya &amp; Implementasi</h2>
                     <p class="text-3xl sm:text-4xl font-extrabold text-white">Proyek Teknik Unggulan</p>
-                    <p class="text-slate-400 text-sm mt-2">Disusun secara terstruktur dengan Dokumentasi (Gambar), Keterangan, dan Penjelasan Teknis.</p>
+                    <p class="text-slate-400 text-sm mt-2">Disusun terstruktur dengan 3 poin wajib: Dokumentasi, Keterangan, dan Penjelasan Teknis.</p>
                     <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-emerald-400 mx-auto mt-4 rounded-full"></div>
                 </div>
 
-                <!-- Projects List -->
                 <div class="space-y-12">
 
                     <!-- PROYEK 1: AMPLIFIER OCL -->
                     <div class="glass-card rounded-2xl overflow-hidden p-6 sm:p-8 border border-amber-500/20">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                             
-                            <!-- POIN 1: DOKUMENTASI (Elemen Gambar img + Option Ganti) -->
+                            <!-- POIN 1: DOKUMENTASI (Clean tag <img>) -->
                             <div class="lg:col-span-5 space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
-                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
-                                    </div>
-                                    <button onclick="triggerImageUpload('img-project-ocl')" class="text-[11px] text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30 hover:bg-amber-500/40 transition-colors">
-                                        <i class="fa-solid fa-upload"></i> Ganti Foto
-                                    </button>
+                                <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
                                 </div>
 
-                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-amber-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg">
-                                    <!-- Tag HTML <img> Dokumentasi Proyek 1 -->
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-amber-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg"
+                                     onclick="openModal('Amplifier OCL High-Fi Power', 'Audio Electronics | SMKN 4 Bandung', 'Visual rangkaian power amplifier OCL lengkap dengan heatsink alumunium besar, transistor final simetris, serta modul catu daya terstabilisasi.', 'img-project-ocl')">
+                                    
                                     <img id="img-project-ocl" 
                                          src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" 
                                          alt="Dokumentasi Amplifier OCL" 
                                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                          onerror="this.onerror=null; this.src='https://placehold.co/800x450/0b131e/fbbf24?text=Dokumentasi+Amplifier+OCL';">
 
-                                    <!-- Hover Overlay for Modal Lightbox or Change Image -->
-                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 transition-opacity duration-300">
-                                        <button onclick="openModal('Amplifier OCL High-Fi Power', 'Audio Electronics | SMKN 4 Bandung', 'Visual rangkaian power amplifier OCL lengkap dengan heatsink alumunium besar, rangkaian transistor final simetris, serta modul catu daya simetris.', 'img-project-ocl')" 
-                                                class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2 hover:scale-105 transition-transform">
-                                            <i class="fa-solid fa-expand"></i> Zoom Foto
-                                        </button>
-                                        <button onclick="triggerImageUpload('img-project-ocl')" 
-                                                class="px-4 py-1.5 rounded-full bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-semibold hover:bg-slate-700">
-                                            <i class="fa-solid fa-camera"></i> Unggah Foto Anda
-                                        </button>
+                                    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                        <span class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2 shadow-lg">
+                                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +355,7 @@
                                 
                                 <!-- POIN 2: KETERANGAN -->
                                 <div class="space-y-2">
-                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                    <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                         <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
                                     </div>
                                     <h3 class="text-2xl font-bold text-white">Amplifier OCL (Output Capacitor-Less)</h3>
@@ -397,24 +364,24 @@
                                             Kategori: Audio Electronics
                                         </span>
                                         <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                                            Kelas: High-Fi Power Amplifier
+                                            Komponen: Transistor Final Komplementer, Catu Daya Simetris
                                         </span>
                                         <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                                            Lokasi: SMKN 4 Bandung
+                                            Instansi: SMKN 4 Bandung
                                         </span>
                                     </div>
                                 </div>
 
                                 <!-- POIN 3: PENJELASAN -->
                                 <div class="space-y-2 border-t border-slate-800 pt-4">
-                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                         <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Teknis
                                     </div>
                                     <p class="text-slate-300 text-sm leading-relaxed">
-                                        Penjelasan teknis mendalam mengenai perakitan sistem daya audio amplifier tipe OCL. Proyek ini mencakup perancangan PCB layout, pemilihan pasangan transistor final komplementer (TIP3055/TIP2955 atau setara) dengan biasing yang presisi, serta penyediaan Catu Daya Simetris (V+, V-, GND) terstabilisasi.
+                                        Perancangan dan perakitan amplifier tipe Output Capacitor-Less (OCL) yang dirancang untuk menghasilkan reproduksi suara berkualitas tinggi tanpa distorsi kapasitor pada tahap keluaran. Menggunakan pasangan transistor komplementer berdaya tinggi dengan pendingin alumunium pasif teroptimasi.
                                     </p>
                                     <p class="text-slate-300 text-sm leading-relaxed">
-                                        Dilakukan pula tuning frekuensi audio untuk menghasilkan karakter suara bass yang mantap, midrange yang jernih, dan treble yang detail tanpa cacat distorsi (THD rendah) pada impedansi beban speaker 4-8 Ohm.
+                                        Proyek ini mencakup tata letak jalur PCB, pengaturan arus bias, dan penyedia catu daya simetris (V+, GND, V-) terstabilisasi untuk memastikan linearitas respon frekuensi bass, midrange, dan treble yang jernih.
                                     </p>
                                 </div>
 
@@ -427,34 +394,25 @@
                     <div class="glass-card rounded-2xl overflow-hidden p-6 sm:p-8 border border-emerald-500/20">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                             
-                            <!-- POIN 1: DOKUMENTASI (Elemen Gambar img) -->
+                            <!-- POIN 1: DOKUMENTASI (Clean tag <img>) -->
                             <div class="lg:col-span-5 space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
-                                    </div>
-                                    <button onclick="triggerImageUpload('img-project-robot')" class="text-[11px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded border border-emerald-500/30 hover:bg-emerald-500/40 transition-colors">
-                                        <i class="fa-solid fa-upload"></i> Ganti Foto
-                                    </button>
+                                <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
                                 </div>
 
-                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-emerald-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg">
-                                    <!-- Tag HTML <img> Dokumentasi Proyek 2 -->
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-emerald-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg"
+                                     onclick="openModal('Robot Beroda Autonomous', 'Robotika & Mikrokontroler | SMKN 4 Bandung', 'Struktur chassis robot beroda 2WD/4WD, modul driver motor H-Bridge L298N, sensor jarak ultrasonik, dan kontroler mikrokontroler.', 'img-project-robot')">
+                                    
                                     <img id="img-project-robot" 
                                          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" 
                                          alt="Dokumentasi Robot Beroda" 
                                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                          onerror="this.onerror=null; this.src='https://placehold.co/800x450/0b131e/10b981?text=Dokumentasi+Robot+Beroda';">
 
-                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 transition-opacity duration-300">
-                                        <button onclick="openModal('Robot Beroda Autonomous', 'Robotika & Mikrokontroler | SMKN 4 Bandung', 'Dokumentasi struktur chassis robot 2WD/4WD, modul driver motor H-Bridge L298N, sensor jarak ultrasonik, dan kontroler mikrokontroler.', 'img-project-robot')" 
-                                                class="px-4 py-2 rounded-full bg-emerald-500 text-darkBg font-bold text-xs flex items-center gap-2 hover:scale-105 transition-transform">
-                                            <i class="fa-solid fa-expand"></i> Zoom Foto
-                                        </button>
-                                        <button onclick="triggerImageUpload('img-project-robot')" 
-                                                class="px-4 py-1.5 rounded-full bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-semibold hover:bg-slate-700">
-                                            <i class="fa-solid fa-camera"></i> Unggah Foto Anda
-                                        </button>
+                                    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                        <span class="px-4 py-2 rounded-full bg-emerald-500 text-darkBg font-bold text-xs flex items-center gap-2 shadow-lg">
+                                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -464,33 +422,30 @@
                                 
                                 <!-- POIN 2: KETERANGAN -->
                                 <div class="space-y-2">
-                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                         <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
                                     </div>
-                                    <h3 class="text-2xl font-bold text-white">Robot Beroda (Wheeled Robot)</h3>
+                                    <h3 class="text-2xl font-bold text-white">Robot Beroda (Wheeled Autonomous Robot)</h3>
                                     <div class="flex flex-wrap gap-2 pt-1">
                                         <span class="px-3 py-1 rounded-md text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                                            Kategori: Robotika &amp; Mikrokontroler
+                                            Kategori: Robotika &amp; Otomasi
                                         </span>
                                         <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                                            Tipe: Autonomous / Remote Control
-                                        </span>
-                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                                            Lokasi: SMKN 4 Bandung
+                                            Komponen: Mikrokontroler, Driver Motor L298N, Sensor Ultrasonik
                                         </span>
                                     </div>
                                 </div>
 
                                 <!-- POIN 3: PENJELASAN -->
                                 <div class="space-y-2 border-t border-slate-800 pt-4">
-                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                    <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                         <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Teknis
                                     </div>
                                     <p class="text-slate-300 text-sm leading-relaxed">
-                                        Pengembangan robot beroda pintar yang mengintegrasikan sistem mekanik dan elektronik. Meliputi perancangan konstruksi chassis akrilik/logam, sistem penggerak menggunakan Motor DC Gearbox yang dikendalikan modul H-Bridge Driver Motor (L298N/L293D).
+                                        Sistem robotika beroda cerdas yang menggabungkan konstruksi mekanik presisi dan kendali elektronik terprogram. Menggunakan penggerak Motor DC Gearbox melalui modul H-Bridge untuk kontrol manuver kecepatan serta arah pergerakan.
                                     </p>
                                     <p class="text-slate-300 text-sm leading-relaxed">
-                                        Sistem dikendalikan oleh mikrokontroler (Arduino/ESP) yang diprogram menggunakan logika khusus untuk pembacaan sensor garis (Line Follower) dan sensor jarak ultrasonik untuk navigasi pembacaan halangan secara cepat, akurat, dan stabil.
+                                        Program logika mikrokontroler memproses input dari sensor garis (Line Follower) serta sensor jarak ultrasonik untuk deteksi dan penyimpangan halangan rintangan secara cepat dan akurat.
                                     </p>
                                 </div>
 
@@ -503,34 +458,25 @@
                     <div class="glass-card rounded-2xl overflow-hidden p-6 sm:p-8 border border-amber-500/20">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                             
-                            <!-- POIN 1: DOKUMENTASI (Elemen Gambar img) -->
+                            <!-- POIN 1: DOKUMENTASI (Clean tag <img>) -->
                             <div class="lg:col-span-5 space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
-                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
-                                    </div>
-                                    <button onclick="triggerImageUpload('img-project-solar')" class="text-[11px] text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30 hover:bg-amber-500/40 transition-colors">
-                                        <i class="fa-solid fa-upload"></i> Ganti Foto
-                                    </button>
+                                <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
                                 </div>
 
-                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-amber-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg">
-                                    <!-- Tag HTML <img> Dokumentasi Proyek 3 -->
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-amber-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg"
+                                     onclick="openModal('Solar Cell Energy System', 'Energi Terbarukan | Renewable Power', 'Integrasi Panel Photovoltaic, Solar Charge Controller (SCC) dengan layar digital, dan akumulator penyimpan daya.', 'img-project-solar')">
+                                    
                                     <img id="img-project-solar" 
                                          src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80" 
                                          alt="Dokumentasi Solar Cell System" 
                                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                          onerror="this.onerror=null; this.src='https://placehold.co/800x450/0b131e/fbbf24?text=Dokumentasi+Solar+Cell';">
 
-                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 transition-opacity duration-300">
-                                        <button onclick="openModal('Solar Cell Energy System', 'Energi Terbarukan | Renewable Power', 'Visual integrasi Panel Photovoltaic 12V, Solar Charge Controller (SCC) dengan layar indikator digital, dan bank baterai penyimpan daya.', 'img-project-solar')" 
-                                                class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2 hover:scale-105 transition-transform">
-                                            <i class="fa-solid fa-expand"></i> Zoom Foto
-                                        </button>
-                                        <button onclick="triggerImageUpload('img-project-solar')" 
-                                                class="px-4 py-1.5 rounded-full bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-semibold hover:bg-slate-700">
-                                            <i class="fa-solid fa-camera"></i> Unggah Foto Anda
-                                        </button>
+                                    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                        <span class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2 shadow-lg">
+                                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -540,30 +486,30 @@
                                 
                                 <!-- POIN 2: KETERANGAN -->
                                 <div class="space-y-2">
-                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                    <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                         <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
                                     </div>
                                     <h3 class="text-2xl font-bold text-white">Solar Cell System (Pembangkit Surya)</h3>
                                     <div class="flex flex-wrap gap-2 pt-1">
                                         <span class="px-3 py-1 rounded-md text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
-                                            Kategori: Energi Terbarukan &amp; Smart Power
+                                            Kategori: Energi Terbarukan &amp; Power
                                         </span>
                                         <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                                            Tipe: Renewable Energy System
+                                            Komponen: Panel Sel Surya, SCC, Baterai Penyimpan
                                         </span>
                                     </div>
                                 </div>
 
                                 <!-- POIN 3: PENJELASAN -->
                                 <div class="space-y-2 border-t border-slate-800 pt-4">
-                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                         <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Teknis
                                     </div>
                                     <p class="text-slate-300 text-sm leading-relaxed">
-                                        Perancangan dan pengujian sistem photovoltaic skala mikro untuk sumber energi listrik mandiri ramah lingkungan. Menghubungkan panel surya ke Solar Charge Controller (SCC) dengan fitur otomasisasi pengisian baterai (Overcharge & Overdischarge Protection).
+                                        Implementasi sistem pembangkit daya terbarukan memanfaatkan fotovoltaik untuk mengonversi radiasi sinar matahari menjadi energi listrik DC. Menggunakan Solar Charge Controller (SCC) pintar untuk regulasi tegangan dan proteksi arus pengisian baterai.
                                     </p>
                                     <p class="text-slate-300 text-sm leading-relaxed">
-                                        Melakukan perhitungan kalkulasi efisiensi radiasi sinar matahari terhadap daya Watt-Peak (Wp) yang dihasilkan, serta mengaplikasikan sistem sebagai daya cadangan (UPS/Backup) untuk perangkat audio portabel dan rangkaian beban DC.
+                                        Dilengkapi pengujian kalkulasi output daya Watt-Peak (Wp) serta proteksi overcharge/overdischarge untuk memberikan suplai listrik cadangan yang efisien dan ramah lingkungan.
                                     </p>
                                 </div>
 
@@ -577,13 +523,12 @@
             </div>
         </section>
 
-        <!-- Certificates Section -->
         <section id="certificates" class="py-20 bg-slate-900/40 border-y border-slate-800/60 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2"><i class="fa-solid fa-trophy mr-1"></i> Prestasi &amp; Kejuaraan</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Sertifikat Kompetensi Unggulan</p>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Sertifikat Kejuaraan Nasional</p>
                     <p class="text-slate-400 text-sm mt-2">Sertifikat Resmi Kompetisi Nasional Kelistrikan dan Inovasi Teknologi.</p>
                     <div class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-amber-400 mx-auto mt-4 rounded-full"></div>
                 </div>
@@ -594,34 +539,25 @@
                     <div class="glass-card rounded-2xl p-6 sm:p-8 border border-amber-500/30 flex flex-col justify-between">
                         <div class="space-y-6">
                             
-                            <!-- POIN 1: DOKUMENTASI SERTIFIKAT (Elemen Gambar img) -->
+                            <!-- POIN 1: DOKUMENTASI SERTIFIKAT -->
                             <div class="space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
-                                    </span>
-                                    <button onclick="triggerImageUpload('img-cert-uec')" class="text-[11px] text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30 hover:bg-amber-500/40 transition-colors">
-                                        <i class="fa-solid fa-upload"></i> Ganti Sertifikat
-                                    </button>
+                                <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
                                 </div>
 
-                                <div class="relative group rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 aspect-[4/3] flex items-center justify-center cursor-pointer">
-                                    <!-- Tag HTML <img> Sertifikat UEC -->
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 aspect-[4/3] flex items-center justify-center cursor-pointer"
+                                     onclick="openModal('Sertifikat UEC (Utama Electrical Competition)', 'Kompetisi Kelistrikan & Elektronika', 'Sertifikat resmi penghargaan atas pencapaian tinggi dalam analisis kelistrikan, perakitan, dan troubleshooting elektronika.', 'img-cert-uec')">
+                                    
                                     <img id="img-cert-uec" 
                                          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" 
                                          alt="Sertifikat UEC" 
                                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/0b131e/fbbf24?text=Foto+Sertifikat+UEC';">
+                                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/0b131e/fbbf24?text=Sertifikat+UEC';">
 
-                                    <div class="absolute inset-0 bg-darkBg/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 transition-opacity">
-                                        <button onclick="openModal('Sertifikat UEC (Utama Electrical Competition)', 'Kompetisi Kelistrikan & Elektronika Nasional', 'Sertifikat resmi penghargaan atas pencapaian tingkat tinggi dalam penguasaan analisis kelistrikan, perakitan, dan troubleshooting elektronika.', 'img-cert-uec')" 
-                                                class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2">
-                                            <i class="fa-solid fa-file-certificate"></i> Zoom Sertifikat
-                                        </button>
-                                        <button onclick="triggerImageUpload('img-cert-uec')" 
-                                                class="px-4 py-1.5 rounded-full bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-semibold hover:bg-slate-700">
-                                            <i class="fa-solid fa-camera"></i> Unggah Foto
-                                        </button>
+                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                        <span class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2">
+                                            <i class="fa-solid fa-file-certificate"></i> Lihat Sertifikat
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -633,8 +569,8 @@
                                 </div>
                                 <h3 class="text-xl font-bold text-white">UEC (Utama Electrical Competition)</h3>
                                 <p class="text-xs text-slate-400">
-                                    <strong class="text-slate-200">Bidang:</strong> Kelistrikan, Troubleshooting &amp; Teknik Elektronika<br/>
-                                    <strong class="text-slate-200">Tingkat:</strong> Kejuaraan Kompetisi Regional / Nasional
+                                    <strong class="text-slate-200">Bidang:</strong> Kelistrikan &amp; Troubleshooting Elektronika<br/>
+                                    <strong class="text-slate-200">Tingkat:</strong> Kejuaraan Kompetisi Nasional
                                 </p>
                             </div>
 
@@ -644,7 +580,7 @@
                                     <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Kompetensi
                                 </div>
                                 <p class="text-slate-300 text-sm leading-relaxed">
-                                    Sertifikat ini diraih atas bukti keahlian dan efisiensi dalam menganalisis skema kelistrikan rumit, keterampilan dalam mendiagnosis kerusakan komponen (troubleshooting), kepatuhan ketat pada standar K3 (Keselamatan Kerja), serta presisi perakitan alat pada ajang Utama Electrical Competition.
+                                    Sertifikat ini diperoleh atas pembuktian keahlian dalam analisis sirkuit kelistrikan, penanganan gangguan teknis (troubleshooting), kepatuhan standar K3, serta presisi eksekusi pengerjaan pada ajang Utama Electrical Competition.
                                 </p>
                             </div>
 
@@ -655,34 +591,25 @@
                     <div class="glass-card rounded-2xl p-6 sm:p-8 border border-emerald-500/30 flex flex-col justify-between">
                         <div class="space-y-6">
                             
-                            <!-- POIN 1: DOKUMENTASI SERTIFIKAT (Elemen Gambar img) -->
+                            <!-- POIN 1: DOKUMENTASI SERTIFIKAT -->
                             <div class="space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
-                                    </span>
-                                    <button onclick="triggerImageUpload('img-cert-eic')" class="text-[11px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded border border-emerald-500/30 hover:bg-emerald-500/40 transition-colors">
-                                        <i class="fa-solid fa-upload"></i> Ganti Sertifikat
-                                    </button>
+                                <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
                                 </div>
 
-                                <div class="relative group rounded-xl overflow-hidden bg-slate-950 border border-emerald-500/30 aspect-[4/3] flex items-center justify-center cursor-pointer">
-                                    <!-- Tag HTML <img> Sertifikat EIC -->
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-950 border border-emerald-500/30 aspect-[4/3] flex items-center justify-center cursor-pointer"
+                                     onclick="openModal('Sertifikat EIC (Electrical Innovation Challenge)', 'Inovasi Teknologi Terapan', 'Sertifikat kejuaraan atas gagasan inovasi terbaik dalam merancang sistem aplikasi elektronika terintegrasi modern.', 'img-cert-eic')">
+                                    
                                     <img id="img-cert-eic" 
                                          src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=800&q=80" 
                                          alt="Sertifikat EIC" 
                                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/0b131e/10b981?text=Foto+Sertifikat+EIC';">
+                                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/0b131e/10b981?text=Sertifikat+EIC';">
 
-                                    <div class="absolute inset-0 bg-darkBg/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 transition-opacity">
-                                        <button onclick="openModal('Sertifikat EIC (Electrical Innovation Challenge)', 'Tingkat Prestasi Inovasi Teknologi', 'Sertifikat kejuaraan atas ide inovasi terbaik dalam merancang sistem aplikasi elektronika terintegrasi modern.', 'img-cert-eic')" 
-                                                class="px-4 py-2 rounded-full bg-emerald-500 text-darkBg font-bold text-xs flex items-center gap-2">
-                                            <i class="fa-solid fa-file-certificate"></i> Zoom Sertifikat
-                                        </button>
-                                        <button onclick="triggerImageUpload('img-cert-eic')" 
-                                                class="px-4 py-1.5 rounded-full bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-semibold hover:bg-slate-700">
-                                            <i class="fa-solid fa-camera"></i> Unggah Foto
-                                        </button>
+                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                        <span class="px-4 py-2 rounded-full bg-emerald-500 text-darkBg font-bold text-xs flex items-center gap-2">
+                                            <i class="fa-solid fa-file-certificate"></i> Lihat Sertifikat
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -694,8 +621,8 @@
                                 </div>
                                 <h3 class="text-xl font-bold text-white">EIC (Electrical Innovation Challenge)</h3>
                                 <p class="text-xs text-slate-400">
-                                    <strong class="text-slate-200">Bidang:</strong> Inovasi Teknologi Terapan &amp; Audio Video<br/>
-                                    <strong class="text-slate-200">Tingkat:</strong> Ajang Tantangan Inovasi Prestasi
+                                    <strong class="text-slate-200">Bidang:</strong> Inovasi Teknologi Terapan Audio Video<br/>
+                                    <strong class="text-slate-200">Tingkat:</strong> Kompetisi Inovasi &amp; Prestasi
                                 </p>
                             </div>
 
@@ -705,7 +632,7 @@
                                     <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Inovasi
                                 </div>
                                 <p class="text-slate-300 text-sm leading-relaxed">
-                                    Penghargaan tingkat inovasi atas keberhasilan menciptakan gagasan dan prototype teknologi tepat guna. Penilaian didasarkan pada orisinalitas karya, efisiensi konsumsi daya, serta kegunaan langsung bagi pengaplikasian di bidang Audio-Video dan sistem otomasi modern.
+                                    Penghargaan atas keberhasilan merancang gagasan dan prototype karya terapan inovatif. Penilaian meliputi orisinalitas ide, efisiensi konsumsi energi, serta nilai guna praktis pada bidang Audio-Video dan otomatisasi.
                                 </p>
                             </div>
 
@@ -717,20 +644,18 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2"><i class="fa-solid fa-envelope mr-1"></i> Kontak &amp; Kolaborasi</h2>
                     <p class="text-3xl sm:text-4xl font-extrabold text-white">Mari Terhubung Dengan Saya</p>
-                    <p class="text-slate-400 text-sm mt-2">Terbuka untuk diskusi proyek, kerja sama teknik, maupun konsultasi seputar TAV.</p>
+                    <p class="text-slate-400 text-sm mt-2">Terbuka untuk diskusi proyek, kerja sama teknik, maupun peluang karir.</p>
                     <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-emerald-400 mx-auto mt-4 rounded-full"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
-                    <!-- Left Contact Info -->
                     <div class="lg:col-span-5 space-y-6">
                         <div class="glass-card p-6 rounded-2xl border border-amber-500/20">
                             <h3 class="text-xl font-bold text-white mb-6">Informasi Kontak</h3>
@@ -743,7 +668,7 @@
                                     <div>
                                         <h4 class="text-xs text-slate-400 uppercase font-semibold">Institusi Sekolah</h4>
                                         <p class="text-sm font-medium text-white">SMK Negeri 4 Bandung</p>
-                                        <p class="text-xs text-slate-400">Jurusan Teknik Audio Video (TAV)</p>
+                                        <p class="text-xs text-slate-400">Teknik Audio Video (TAV)</p>
                                     </div>
                                 </div>
 
@@ -772,12 +697,10 @@
                         </div>
                     </div>
 
-                    <!-- Right Interactive Form -->
                     <div class="lg:col-span-7">
                         <form id="contactForm" onsubmit="handleFormSubmit(event)" class="glass-card p-6 sm:p-8 rounded-2xl border border-amber-500/20 space-y-4">
                             <h3 class="text-xl font-bold text-white mb-2">Kirim Pesan Direct</h3>
                             
-                            <!-- Notification Box -->
                             <div id="formAlert" class="hidden p-4 rounded-xl text-xs font-semibold"></div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -813,7 +736,6 @@
         </section>
     </main>
 
-    <!-- Footer Section -->
     <footer class="bg-slate-950 border-t border-slate-800/80 py-8 text-center sm:text-left">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -828,11 +750,10 @@
         </div>
     </footer>
 
-    <!-- Modal Preview Lightbox -->
+    <!-- Clean Modal Preview Lightbox -->
     <div id="modalLightbox" class="fixed inset-0 z-50 bg-darkBg/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
-        <div class="glass-card max-w-3xl w-full rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+        <div class="glass-card max-w-3xl w-full rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl relative">
             
-            <!-- Modal Header -->
             <div class="flex items-center justify-between p-5 border-b border-slate-800">
                 <h3 id="modalTitle" class="text-lg font-bold text-white">Detail Dokumentasi</h3>
                 <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
@@ -840,26 +761,18 @@
                 </button>
             </div>
 
-            <!-- Modal Content Body -->
             <div class="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
-                
-                <!-- Zoomed Image Container -->
                 <div class="w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center max-h-[50vh]">
-                    <img id="modalImage" src="" alt="Zoom Preview Dokumentasi" class="w-full h-full object-contain">
+                    <img id="modalImage" src="" alt="Zoom Dokumentasi" class="w-full h-full object-contain">
                 </div>
 
                 <div>
                     <span id="modalCategory" class="text-xs text-amber-400 font-semibold uppercase tracking-wider block mb-1">Kategori</span>
                     <p id="modalDesc" class="text-sm text-slate-300 leading-relaxed">Penjelasan rinci dokumentasi.</p>
                 </div>
-
             </div>
 
-            <!-- Modal Footer -->
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 flex justify-between items-center">
-                <button id="modalUploadBtn" onclick="" class="px-4 py-2 text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 transition-colors">
-                    <i class="fa-solid fa-camera mr-1"></i> Ganti Foto Ini
-                </button>
+            <div class="p-4 bg-slate-900/80 border-t border-slate-800 flex justify-end">
                 <button onclick="closeModal()" class="px-5 py-2 text-xs font-bold text-darkBg bg-amber-400 rounded-lg hover:bg-amber-300 transition-colors">
                     Tutup
                 </button>
@@ -868,11 +781,8 @@
         </div>
     </div>
 
-    <!-- Interactive Logic Script -->
     <script>
-        let currentTargetImgId = null;
-
-        // Mobile Menu Toggle logic
+        // Mobile Navigation Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
@@ -896,33 +806,7 @@
             });
         });
 
-        // Trigger file picker for specific <img> element
-        function triggerImageUpload(targetImgId) {
-            currentTargetImgId = targetImgId;
-            document.getElementById('globalImageUploader').click();
-        }
-
-        // Apply uploaded local image to target <img> element
-        function applyUploadedImage(event) {
-            const file = event.target.files[0];
-            if (file && currentTargetImgId) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imgElement = document.getElementById(currentTargetImgId);
-                    if (imgElement) {
-                        imgElement.src = e.target.result;
-                    }
-                    // Update modal image preview if currently open
-                    const modalImg = document.getElementById('modalImage');
-                    if (modalImg) {
-                        modalImg.src = e.target.result;
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Modal Lightbox Functions
+        // Modal Lightbox Zoom Handler
         function openModal(title, category, description, imgSourceId) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalCategory').innerText = category;
@@ -934,12 +818,6 @@
             if (targetImg) {
                 modalImg.src = targetImg.src;
             }
-
-            // Set dynamic uploader trigger on modal button
-            const modalUploadBtn = document.getElementById('modalUploadBtn');
-            modalUploadBtn.onclick = function() {
-                triggerImageUpload(imgSourceId);
-            };
 
             document.getElementById('modalLightbox').classList.remove('hidden');
         }
