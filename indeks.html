@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Algi Fahri | Portofolio Teknik Audio Video</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b131e',
+                        cardBg: 'rgba(18, 30, 49, 0.75)',
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        emeraldGlow: '#059669',
+                        cyanHighlight: '#06b6d4',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px -5px rgba(245, 158, 11, 0.25)',
+                        'emerald-glow': '0 0 25px -5px rgba(16, 185, 129, 0.25)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Styles -->
+    <style>
+        body {
+            background-color: #0b131e;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism card effect */
+        .glass-card {
+            background: rgba(18, 30, 49, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px -10px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b131e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+
+        /* Gradient Text */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-emerald {
+            background: linear-gradient(135deg, #a7f3d0 0%, #10b981 50%, #047857 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Background Animated Spheres */
+        .bg-glow-1 {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        .bg-glow-2 {
+            position: absolute;
+            top: 40%;
+            right: 5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(50px);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between">
+
+    <!-- Background Ambient Glows -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Navbar Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-amber-500/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-emerald-500 flex items-center justify-center font-bold text-darkBg shadow-lg group-hover:scale-105 transition-transform">
+                        AF
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-white block group-hover:text-amber-400 transition-colors">M. Algi Fahri</span>
+                        <span class="text-xs text-amber-500/80 font-medium tracking-wider uppercase block">SMK Negeri 4 Bandung</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-user text-xs text-amber-500"></i> Tentang Saya
+                    </a>
+                    <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-xs text-amber-500"></i> Proyek Utama
+                    </a>
+                    <a href="#certificates" class="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-award text-xs text-amber-500"></i> Sertifikat
+                    </a>
+                    <a href="#contact" class="px-5 py-2.5 text-sm font-semibold text-darkBg bg-gradient-to-r from-amber-400 to-amber-500 rounded-full hover:shadow-gold-glow hover:scale-105 transition-all duration-300">
+                        Hubungi Saya
+                    </a>
+                </nav>
+
+                <!-- Mobile Navigation Toggle Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-amber-400 hover:text-white border border-amber-500/20 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-amber-500/20 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-amber-500/10 hover:text-amber-400">
+                <i class="fa-solid fa-user text-amber-500 mr-2"></i> Tentang Saya
+            </a>
+            <a href="#projects" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-amber-500/10 hover:text-amber-400">
+                <i class="fa-solid fa-microchip text-amber-500 mr-2"></i> Proyek Utama
+            </a>
+            <a href="#certificates" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-amber-500/10 hover:text-amber-400">
+                <i class="fa-solid fa-award text-amber-500 mr-2"></i> Sertifikat Kejuaraan
+            </a>
+            <a href="#contact" class="mobile-link block text-center mt-2 px-4 py-2.5 text-base font-semibold text-darkBg bg-gradient-to-r from-amber-400 to-amber-500 rounded-lg">
+                Hubungi Saya
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Siswa Teknik Audio Video - SMKN 4 Bandung
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Halo, Saya <br class="hidden sm:inline" />
+                            <span class="text-gradient-gold">Muhammad Algi Fahri</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                            Fokus pada perakitan sistem audio Hi-Fi, sistem otomatisasi robotika, serta inovasi daya terbarukan dengan standar kualitas tinggi dan keakuratan teknik.
+                        </p>
+
+                        <!-- Call To Action Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <a href="#projects" class="px-8 py-3.5 text-base font-bold rounded-xl text-darkBg bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:shadow-gold-glow hover:scale-105 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-folder-open"></i> Lihat Proyek Saya
+                            </a>
+                            <a href="#contact" class="px-8 py-3.5 text-base font-semibold rounded-xl text-slate-200 border border-amber-500/30 hover:bg-amber-500/10 hover:border-amber-500/60 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-amber-400"></i> Hubungi Saya
+                            </a>
+                        </div>
+
+                        <!-- Quick Badges -->
+                        <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                            <div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-amber-400">3+</h4>
+                                <p class="text-xs text-slate-400">Proyek Utama</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-emerald-400">2</h4>
+                                <p class="text-xs text-slate-400">Sertifikat Nasional</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-amber-400">100%</h4>
+                                <p class="text-xs text-slate-400">Dedikasi Teknik</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Avatar Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <!-- Visual Frame Background Glow -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
+                            
+                            <div class="relative glass-card rounded-3xl p-6 text-center border border-amber-500/30">
+                                <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-2xl bg-slate-800 flex items-center justify-center">
+                                    <!-- Avatar Placeholder Icon / Graphic -->
+                                    <div class="w-full h-full bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col items-center justify-center p-4">
+                                        <i class="fa-solid fa-user-gear text-6xl text-amber-400 mb-2"></i>
+                                        <span class="text-xs text-slate-400 font-mono">TAV Specialist</span>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-1">M. Algi Fahri</h3>
+                                <p class="text-xs text-amber-400 font-medium mb-4">Siswa SMK Negeri 4 Bandung</p>
+                                
+                                <div class="flex justify-center gap-2 flex-wrap">
+                                    <span class="px-3 py-1 rounded-md text-xs bg-slate-800 text-slate-300 border border-slate-700">Audio Hi-Fi</span>
+                                    <span class="px-3 py-1 rounded-md text-xs bg-slate-800 text-slate-300 border border-slate-700">Mikrokontroler</span>
+                                    <span class="px-3 py-1 rounded-md text-xs bg-slate-800 text-slate-300 border border-slate-700">Solar Power</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-900/40 border-y border-slate-800/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2"><i class="fa-solid fa-circle-info mr-1"></i> Tentang Profil Saya</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Komitmen Pada Presisi &amp; Inovasi Elektronika</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Bio Description Card -->
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-graduation-cap text-amber-400"></i> Siswa SMK Negeri 4 Bandung
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            Saya adalah siswa yang berdedikasi tinggi dari jurusan <strong class="text-amber-400 font-semibold">Teknik Audio Video (TAV)</strong> di SMKN 4 Bandung. Memiliki ketertarikan mendalam pada perancangan sirkuit analog maupun digital, pengolahan sinyal audio frekuensi tinggi, serta implementasi energi terbarukan untuk mendukung teknologi masa depan yang ramah lingkungan.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            Selalu bersemangat mempelajari hal baru, terbiasa dengan pemecahan masalah teknis secara metodis, dan siap memberikan hasil kerja berkualitas tinggi secara individu maupun tim.
+                        </p>
+                    </div>
+
+                    <!-- Skills Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Skill 1 -->
+                        <div class="glass-card p-5 rounded-xl border border-amber-500/20">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
+                                <i class="fa-solid fa-sliders text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Audio Systems</h4>
+                            <p class="text-xs text-slate-400">Amplifier Hi-Fi, tuning frekuensi, pengujian THD, &amp; tata suara.</p>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="glass-card p-5 rounded-xl border border-emerald-500/20">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
+                                <i class="fa-solid fa-microchip text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Robotics &amp; MCU</h4>
+                            <p class="text-xs text-slate-400">Mikrokontroler, H-Bridge motor driver, &amp; sensor navigasi presisi.</p>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="glass-card p-5 rounded-xl border border-emerald-500/20">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
+                                <i class="fa-solid fa-solar-panel text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Renewable Energy</h4>
+                            <p class="text-xs text-slate-400">Solar cell photovoltaic, SCC charge controller, &amp; penyimpan daya.</p>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="glass-card p-5 rounded-xl border border-amber-500/20">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
+                                <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Circuit &amp; Troubleshooting</h4>
+                            <p class="text-xs text-slate-400">Penyolderan presisi, skematik PCB, &amp; analisis kegagalan komponen.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2"><i class="fa-solid fa-diagram-project mr-1"></i> Karya &amp; Implementasi</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Proyek Teknik Unggulan</p>
+                    <p class="text-slate-400 text-sm mt-2">Disusun secara terstruktur dengan Dokumentasi, Keterangan, dan Penjelasan Teknis.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Projects List -->
+                <div class="space-y-12">
+
+                    <!-- PROYEK 1: AMPLIFIER OCL -->
+                    <div class="glass-card rounded-2xl overflow-hidden p-6 sm:p-8 border border-amber-500/20">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            
+                            <!-- POIN 1: DOKUMENTASI (Visual) -->
+                            <div class="lg:col-span-5 space-y-3">
+                                <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
+                                </div>
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-amber-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg"
+                                     onclick="openModal('Amplifier OCL High-Fi Power', 'Audio Electronics | SMKN 4 Bandung', 'Visual rangkaian power amplifier OCL lengkap dengan heatsink alumunium besar, rangkaian transistor final simetris, serta modul catu daya simetris.', 'amplifier-ocl')">
+                                    
+                                    <!-- Visual Mockup Canvas/SVG -->
+                                    <div class="w-full h-full bg-slate-900 flex flex-col items-center justify-center p-6 text-center relative">
+                                        <i class="fa-solid fa-compact-disc text-6xl text-amber-500/70 group-hover:scale-110 transition-transform duration-300"></i>
+                                        <span class="mt-3 font-semibold text-sm text-slate-200">Perakitan Amplifier OCL</span>
+                                        <span class="text-xs text-amber-400/80">Klik untuk melihat dokumentasi penuh</span>
+                                    </div>
+
+                                    <!-- Hover Overlay -->
+                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                        <span class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2">
+                                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- POIN 2 & 3: KETERANGAN & PENJELASAN -->
+                            <div class="lg:col-span-7 space-y-6">
+                                
+                                <!-- POIN 2: KETERANGAN -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                        <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white">Amplifier OCL (Output Capacitor-Less)</h3>
+                                    <div class="flex flex-wrap gap-2 pt-1">
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                                            Kategori: Audio Electronics
+                                        </span>
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                            Kelas: High-Fi Power Amplifier
+                                        </span>
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                            Lokasi: SMKN 4 Bandung
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- POIN 3: PENJELASAN -->
+                                <div class="space-y-2 border-t border-slate-800 pt-4">
+                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                        <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Teknis
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Penjelasan teknis mendalam mengenai perakitan sistem daya audio amplifier tipe OCL. Proyek ini mencakup perancangan PCB layout, pemilihan pasangan transistor final komplementer (TIP3055/TIP2955 atau setara) dengan biasing yang presisi, serta penyediaan Catu Daya Simetris (V+, V-, GND) terstabilisasi.
+                                    </p>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Dilakukan pula tuning frekuensi audio untuk menghasilkan karakter suara bass yang mantap, midrange yang jernih, dan treble yang detail tanpa cacat distorsi (THD rendah) pada impedansi beban speaker 4-8 Ohm.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PROYEK 2: ROBOT BERODA -->
+                    <div class="glass-card rounded-2xl overflow-hidden p-6 sm:p-8 border border-emerald-500/20">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            
+                            <!-- POIN 1: DOKUMENTASI (Visual) -->
+                            <div class="lg:col-span-5 space-y-3">
+                                <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
+                                </div>
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-emerald-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg"
+                                     onclick="openModal('Robot Beroda Autonomous', 'Robotika & Mikrokontroler | SMKN 4 Bandung', 'Dokumentasi struktur chassis robot 2WD/4WD, modul driver motor H-Bridge L298N, sensor jarak ultrasonik, dan kontroler mikrokontroler.', 'wheeled-robot')">
+                                    
+                                    <div class="w-full h-full bg-slate-900 flex flex-col items-center justify-center p-6 text-center relative">
+                                        <i class="fa-solid fa-robot text-6xl text-emerald-500/70 group-hover:scale-110 transition-transform duration-300"></i>
+                                        <span class="mt-3 font-semibold text-sm text-slate-200">Perancangan Robot Beroda</span>
+                                        <span class="text-xs text-emerald-400/80">Klik untuk melihat dokumentasi penuh</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                        <span class="px-4 py-2 rounded-full bg-emerald-500 text-darkBg font-bold text-xs flex items-center gap-2">
+                                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- POIN 2 & 3: KETERANGAN & PENJELASAN -->
+                            <div class="lg:col-span-7 space-y-6">
+                                
+                                <!-- POIN 2: KETERANGAN -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                        <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white">Robot Beroda (Wheeled Robot)</h3>
+                                    <div class="flex flex-wrap gap-2 pt-1">
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                                            Kategori: Robotika &amp; Mikrokontroler
+                                        </span>
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                            Tipe: Autonomous / Remote Control
+                                        </span>
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                            Lokasi: SMKN 4 Bandung
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- POIN 3: PENJELASAN -->
+                                <div class="space-y-2 border-t border-slate-800 pt-4">
+                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                        <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Teknis
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Pengembangan robot beroda pintar yang mengintegrasikan sistem mekanik dan elektronik. Meliputi perancangan konstruksi chassis akrilik/logam, sistem penggerak menggunakan Motor DC Gearbox yang dikendalikan modul H-Bridge Driver Motor (L298N/L293D).
+                                    </p>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Sistem dikendalikan oleh mikrokontroler (Arduino/ESP) yang diprogram menggunakan logika khusus untuk pembacaan sensor garis (Line Follower) dan sensor jarak ultrasonik untuk navigasi pembacaan halangan secara cepat, akurat, dan stabil.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PROYEK 3: SOLAR CELL SYSTEM -->
+                    <div class="glass-card rounded-2xl overflow-hidden p-6 sm:p-8 border border-amber-500/20">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            
+                            <!-- POIN 1: DOKUMENTASI (Visual) -->
+                            <div class="lg:col-span-5 space-y-3">
+                                <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                    <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
+                                </div>
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-900 border border-amber-500/20 aspect-video flex items-center justify-center cursor-pointer shadow-lg"
+                                     onclick="openModal('Solar Cell Energy System', 'Energi Terbarukan | Renewable Power', 'Visual integrasi Panel Photovoltaic 12V, Solar Charge Controller (SCC) dengan layar indikator digital, dan bank baterai penyimpan daya.', 'solar-cell')">
+                                    
+                                    <div class="w-full h-full bg-slate-900 flex flex-col items-center justify-center p-6 text-center relative">
+                                        <i class="fa-solid fa-solar-panel text-6xl text-amber-500/70 group-hover:scale-110 transition-transform duration-300"></i>
+                                        <span class="mt-3 font-semibold text-sm text-slate-200">Sistem Pembangkit Solar Cell</span>
+                                        <span class="text-xs text-amber-400/80">Klik untuk melihat dokumentasi penuh</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-darkBg/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                        <span class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs flex items-center gap-2">
+                                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- POIN 2 & 3: KETERANGAN & PENJELASAN -->
+                            <div class="lg:col-span-7 space-y-6">
+                                
+                                <!-- POIN 2: KETERANGAN -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                        <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white">Solar Cell System (Pembangkit Surya)</h3>
+                                    <div class="flex flex-wrap gap-2 pt-1">
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                                            Kategori: Energi Terbarukan &amp; Smart Power
+                                        </span>
+                                        <span class="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                            Tipe: Renewable Energy System
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- POIN 3: PENJELASAN -->
+                                <div class="space-y-2 border-t border-slate-800 pt-4">
+                                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                        <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Teknis
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Perancangan dan pengujian sistem photovoltaic skala mikro untuk sumber energi listrik mandiri ramah lingkungan. Menghubungkan panel surya ke Solar Charge Controller (SCC) dengan fitur otomasisasi pengisian baterai (Overcharge & Overdischarge Protection).
+                                    </p>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Melakukan perhitungan kalkulasi efisiensi radiasi sinar matahari terhadap daya Watt-Peak (Wp) yang dihasilkan, serta mengaplikasikan sistem sebagai daya cadangan (UPS/Backup) untuk perangkat audio portabel dan rangkaian beban DC.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-20 bg-slate-900/40 border-y border-slate-800/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2"><i class="fa-solid fa-trophy mr-1"></i> Prestasi &amp; Kejuaraan</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Sertifikat Kompetensi Unggulan</p>
+                    <p class="text-slate-400 text-sm mt-2">Sertifikat Resmi Kompetisi Nasional Kelistrikan dan Inovasi Teknologi.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-amber-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- SERTIFIKAT 1: UEC -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-amber-500/30 flex flex-col justify-between">
+                        <div class="space-y-6">
+                            
+                            <!-- POIN 1: DOKUMENTASI SERTIFIKAT -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
+                                    </span>
+                                    <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">
+                                        UEC Award
+                                    </span>
+                                </div>
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 p-6 text-center cursor-pointer"
+                                     onclick="openModal('Sertifikat UEC (Utama Electrical Competition)', 'Kompetisi Kelistrikan & Elektronika Nasional', 'Sertifikat resmi penghargaan atas pencapaian tingkat tinggi dalam penguasaan analisis kelistrikan, perakitan, dan troubleshooting elektronika.', 'sertifikat-uec')">
+                                    
+                                    <div class="py-6 flex flex-col items-center">
+                                        <i class="fa-solid fa-award text-6xl text-amber-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                                        <h4 class="text-lg font-bold text-white">Sertifikat Kejuaraan UEC</h4>
+                                        <p class="text-xs text-slate-400">Utama Electrical Competition</p>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-darkBg/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                        <span class="px-4 py-2 rounded-full bg-amber-500 text-darkBg font-bold text-xs">
+                                            <i class="fa-solid fa-file-certificate"></i> Pratinjau Sertifikat
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- POIN 2: KETERANGAN SERTIFIKAT -->
+                            <div class="space-y-2">
+                                <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
+                                </div>
+                                <h3 class="text-xl font-bold text-white">UEC (Utama Electrical Competition)</h3>
+                                <p class="text-xs text-slate-400">
+                                    <strong class="text-slate-200">Bidang:</strong> Kelistrikan, Troubleshooting &amp; Teknik Elektronika<br/>
+                                    <strong class="text-slate-200">Tingkat:</strong> Kejuaraan Kompetisi Regional / Nasional
+                                </p>
+                            </div>
+
+                            <!-- POIN 3: PENJELASAN SERTIFIKAT -->
+                            <div class="space-y-2 border-t border-slate-800 pt-4">
+                                <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Kompetensi
+                                </div>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    Sertifikat ini diraih atas bukti keahlian dan efisiensi dalam menganalisis skema kelistrikan rumit, keterampilan dalam mendiagnosis kerusakan komponen (troubleshooting), kepatuhan ketat pada standar K3 (Keselamatan Kerja), serta presisi perakitan alat pada ajang Utama Electrical Competition.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- SERTIFIKAT 2: EIC -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-emerald-500/30 flex flex-col justify-between">
+                        <div class="space-y-6">
+                            
+                            <!-- POIN 1: DOKUMENTASI SERTIFIKAT -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-camera"></i> Poin 1: Dokumentasi
+                                    </span>
+                                    <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">
+                                        EIC Award
+                                    </span>
+                                </div>
+                                <div class="relative group rounded-xl overflow-hidden bg-slate-950 border border-emerald-500/30 p-6 text-center cursor-pointer"
+                                     onclick="openModal('Sertifikat EIC (Electrical Innovation Challenge)', 'Tingkat Prestasi Inovasi Teknologi', 'Sertifikat kejuaraan atas ide inovasi terbaik dalam merancang sistem aplikasi elektronika terintegrasi modern.', 'sertifikat-eic')">
+                                    
+                                    <div class="py-6 flex flex-col items-center">
+                                        <i class="fa-solid fa-certificate text-6xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                                        <h4 class="text-lg font-bold text-white">Sertifikat Kejuaraan EIC</h4>
+                                        <p class="text-xs text-slate-400">Electrical Innovation Challenge</p>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-darkBg/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                        <span class="px-4 py-2 rounded-full bg-emerald-500 text-darkBg font-bold text-xs">
+                                            <i class="fa-solid fa-file-certificate"></i> Pratinjau Sertifikat
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- POIN 2: KETERANGAN SERTIFIKAT -->
+                            <div class="space-y-2">
+                                <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-list-check"></i> Poin 2: Keterangan
+                                </div>
+                                <h3 class="text-xl font-bold text-white">EIC (Electrical Innovation Challenge)</h3>
+                                <p class="text-xs text-slate-400">
+                                    <strong class="text-slate-200">Bidang:</strong> Inovasi Teknologi Terapan &amp; Audio Video<br/>
+                                    <strong class="text-slate-200">Tingkat:</strong> Ajang Tantangan Inovasi Prestasi
+                                </p>
+                            </div>
+
+                            <!-- POIN 3: PENJELASAN SERTIFIKAT -->
+                            <div class="space-y-2 border-t border-slate-800 pt-4">
+                                <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-lightbulb"></i> Poin 3: Penjelasan Inovasi
+                                </div>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    Penghargaan tingkat inovasi atas keberhasilan menciptakan gagasan dan prototype teknologi tepat guna. Penilaian didasarkan pada orisinalitas karya, efisiensi konsumsi daya, serta kegunaan langsung bagi pengaplikasian di bidang Audio-Video dan sistem otomasi modern.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2"><i class="fa-solid fa-envelope mr-1"></i> Kontak &amp; Kolaborasi</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Mari Terhubung Dengan Saya</p>
+                    <p class="text-slate-400 text-sm mt-2">Terbuka untuk diskusi proyek, kerja sama teknik, maupun konsultasi seputar TAV.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Contact Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card p-6 rounded-2xl border border-amber-500/20">
+                            <h3 class="text-xl font-bold text-white mb-6">Informasi Kontak</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                                        <i class="fa-solid fa-school"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs text-slate-400 uppercase font-semibold">Institusi Sekolah</h4>
+                                        <p class="text-sm font-medium text-white">SMK Negeri 4 Bandung</p>
+                                        <p class="text-xs text-slate-400">Jurusan Teknik Audio Video (TAV)</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs text-slate-400 uppercase font-semibold">Lokasi</h4>
+                                        <p class="text-sm font-medium text-white">Kota Bandung, Jawa Barat</p>
+                                        <p class="text-xs text-slate-400">Indonesia</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs text-slate-400 uppercase font-semibold">Email Siswa</h4>
+                                        <p class="text-sm font-medium text-white">algi.fahri@smkn4bdg.sch.id</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="glass-card p-6 sm:p-8 rounded-2xl border border-amber-500/20 space-y-4">
+                            <h3 class="text-xl font-bold text-white mb-2">Kirim Pesan Direct</h3>
+                            
+                            <!-- Notification Box -->
+                            <div id="formAlert" class="hidden p-4 rounded-xl text-xs font-semibold"></div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap</label>
+                                    <input type="text" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:border-amber-400 focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Email Anda</label>
+                                    <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:border-amber-400 focus:outline-none transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Subjek Pesan</label>
+                                <input type="text" required placeholder="Contoh: Diskusi Proyek Amplifier" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:border-amber-400 focus:outline-none transition-colors">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Pesan / Diskusi</label>
+                                <textarea rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:border-amber-400 focus:outline-none transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 text-sm font-bold text-darkBg bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl hover:shadow-gold-glow hover:scale-[1.01] active:scale-95 transition-all duration-200">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Pesan Sekarang
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-8 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>
+                    <p class="text-sm font-semibold text-white">Muhammad Algi Fahri</p>
+                    <p class="text-xs text-slate-400">Teknik Audio Video — SMK Negeri 4 Bandung</p>
+                </div>
+                <p class="text-xs text-slate-500">
+                    &copy; 2026 Portofolio Elegan. Hak Cipta Dilindungi.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Preview Lightbox -->
+    <div id="modalLightbox" class="fixed inset-0 z-50 bg-darkBg/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
+        <div class="glass-card max-w-2xl w-full rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-5 border-b border-slate-800">
+                <h3 id="modalTitle" class="text-lg font-bold text-white">Detail Dokumentasi</h3>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-6 space-y-4">
+                
+                <!-- Visual Container Placeholder -->
+                <div id="modalGraphic" class="w-full h-48 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-4 text-center">
+                    <i class="fa-solid fa-image text-5xl text-amber-400 mb-2"></i>
+                    <span id="modalCategory" class="text-xs text-amber-400 font-semibold uppercase">Kategori</span>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-1">Rincian Dokumentasi</h4>
+                    <p id="modalDesc" class="text-sm text-slate-300 leading-relaxed">Penjelasan rinci dokumentasi.</p>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-right">
+                <button onclick="closeModal()" class="px-5 py-2 text-xs font-bold text-darkBg bg-amber-400 rounded-lg hover:bg-amber-300 transition-colors">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Modal Lightbox Functions
+        function openModal(title, category, description, type) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalCategory').innerText = category;
+            document.getElementById('modalDesc').innerText = description;
+
+            const modalGraphic = document.getElementById('modalGraphic');
+            
+            // Customize graphic based on content type
+            if (type === 'amplifier-ocl') {
+                modalGraphic.innerHTML = `
+                    <i class="fa-solid fa-compact-disc text-6xl text-amber-400 mb-2"></i>
+                    <span class="text-xs text-slate-300 font-mono">Skema Rangkaian Transistor OCL &amp; Heatsink Power</span>
+                `;
+            } else if (type === 'wheeled-robot') {
+                modalGraphic.innerHTML = `
+                    <i class="fa-solid fa-robot text-6xl text-emerald-400 mb-2"></i>
+                    <span class="text-xs text-slate-300 font-mono">Konstruksi Chassis 2WD + Driver Motor L298N</span>
+                `;
+            } else if (type === 'solar-cell') {
+                modalGraphic.innerHTML = `
+                    <i class="fa-solid fa-solar-panel text-6xl text-amber-400 mb-2"></i>
+                    <span class="text-xs text-slate-300 font-mono">Panel Photovoltaic &amp; Controller Pengisian Baterai</span>
+                `;
+            } else if (type === 'sertifikat-uec') {
+                modalGraphic.innerHTML = `
+                    <i class="fa-solid fa-award text-6xl text-amber-400 mb-2"></i>
+                    <span class="text-xs text-slate-300 font-mono">Sertifikat Resmi UEC Kejuaraan Kelistrikan</span>
+                `;
+            } else if (type === 'sertifikat-eic') {
+                modalGraphic.innerHTML = `
+                    <i class="fa-solid fa-certificate text-6xl text-emerald-400 mb-2"></i>
+                    <span class="text-xs text-slate-300 font-mono">Sertifikat Inovasi Teknologi Electrical Challenge</span>
+                `;
+            }
+
+            document.getElementById('modalLightbox').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modalLightbox').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside box
+        document.getElementById('modalLightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'modalLightbox') {
+                closeModal();
+            }
+        });
+
+        // Form Submit Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('formAlert');
+            
+            alertBox.className = "p-4 rounded-xl text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40";
+            alertBox.innerText = "Terima kasih! Pesan Anda telah terkirim kepada Muhammad Algi Fahri.";
+            alertBox.classList.remove('hidden');
+
+            event.target.reset();
+
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
